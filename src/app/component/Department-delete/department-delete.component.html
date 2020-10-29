@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>Delete Department</h2>
+
+    <div class="for-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are you Sure?
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-danger btn-sm" (click)="delete()">Delete</button>
+                <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/department-list' ]">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="for-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+            <br>
+            <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/department-list' ]">Back</a>
+        </div>
+    </div>
+
+    <form #departmentForm="ngForm" *ngIf="department">
+        <div class="form-row">
+
+
+            <div class="col-md-4">
+                <label>DepartmentID:</label>
+                <input type="text" id="DepartmentID" name="DepartmentID" placeholder="Enter the department DepartmentID" class="form-control"
+                    [(ngModel)]="department.DepartmentID">
+            </div>
+
+            <div class="col-md-4">
+                <label>Name:</label>
+                <input type="text" id="Name" name="Name" placeholder="Enter the department Name" class="form-control"
+                    [(ngModel)]="department.Name">
+            </div>
+
+            <div class="col-md-4">
+                <label>Budget:</label>
+                <input type="text" id="Budget" name="Budget" placeholder="Enter the department Budget" class="form-control"
+                    [(ngModel)]="department.Budget">
+            </div>
+
+            <div class="col-md-4">
+                <label>StartDate:</label>
+                <input type="text" id="StartDate" name="StartDate" placeholder="Enter the department StartDate" class="form-control"
+                    [(ngModel)]="department.StartDate">
+            </div>
+
+            <div class="col-md-4">
+                <label>InstructorID:</label>
+                <input type="text" id="InstructorID" name="InstructorID" placeholder="Enter the department InstructorID"
+                    class="form-control" [(ngModel)]="department.InstructorID">
+            </div>
+
+            <div class="col-md-4">
+                <label>Instructor:</label>
+                <input type="text" id="Instructor" name="Instructor" placeholder="Enter the department Instructor"
+                    class="form-control" [(ngModel)]="department.Instructor">
+            </div>
+
+        </div>
+    </form>
+</div>

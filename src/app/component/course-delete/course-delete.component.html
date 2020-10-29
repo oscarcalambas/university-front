@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Delete Course</h2>
+
+    <div class="for-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are you Sure?
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-danger btn-sm" (click)="delete()">Delete</button>
+                <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/course-list' ]">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="for-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+            <br>
+            <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/course-list' ]">Back</a>
+        </div>
+    </div>
+
+    <form #courseForm="ngForm" *ngIf="course">
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>ID:</label>
+                <input type="number" id="CourseID" name="CourseID" placeholder="Enter the course ID"
+                    class="form-control" [(ngModel)]="course.CourseID" readonly />
+            </div>
+
+            <div class="col-md-4">
+                <label>Title:</label>
+                <input type="text" id="Title" name="Title" placeholder="Enter the course Title" class="form-control"
+                    [(ngModel)]="course.Title">
+            </div>
+
+            <div class="col-md-4">
+                <label>Credits:</label>
+                <input type="text" id="Credits" name="Credits" placeholder="Enter the course Credits"
+                    class="form-control" [(ngModel)]="course.Credits">
+            </div>
+
+        </div>
+    </form>
+</div>

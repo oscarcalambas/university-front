@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>Edit Department</h2>
+
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+
+    <form #departmentForm="ngForm" *ngIf="department">
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>DepartmentID:</label>
+                <input type="number" id="DepartmentID" name="DepartmentID" placeholder="Enter the Department ID"
+                    class="form-control" [(ngModel)]="department.DepartmentID" readonly />
+            </div>
+
+            <div class="col-md-4">
+                <label>Name:</label>
+                <input type="text" id="Name" name="Name" placeholder="Enter the department department" class="form-control"
+                    [(ngModel)]="department.Name">
+
+            </div>
+
+            <div class="col-md-4">
+                <label>Budget:</label>
+                <input type="text" id="Budget" name="Budget" placeholder="Enter the department Budget"
+                    class="form-control" [(ngModel)]="department.Budget">
+            </div>
+
+            
+            <div class="col-md-4">
+                <label>StartDate:</label>
+                <input type="text" id="StartDate" name="StartDate" placeholder="Enter the department StartDate"
+                    class="form-control" [(ngModel)]="department.StartDate">
+            </div>
+
+            
+            <div class="col-md-4">
+                <label>InstructorID:</label>
+                <input type="text" id="InstructorID" name="InstructorID" placeholder="Enter the department InstructorID"
+                    class="form-control" [(ngModel)]="department.InstructorID">
+            </div>
+
+            
+            <div class="col-md-4">
+                <label>Instructor:</label>
+                <input type="text" id="Instructor" name="Instructor" placeholder="Enter the department Instructor"
+                    class="form-control" [(ngModel)]="department.Instructor">
+            </div>
+
+        </div>
+        <br>
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-primary btn-sm" (click)="edit()">Edit</button>
+            <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/department-list' ]">Back</a>
+        </div>
+    </form>
+</div>

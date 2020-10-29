@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Department</h1>
+    <a class="btn btn-outline-success btn-sm" [routerLink]="[ '/department-save' ]">New</a>
+<br>
+    <table class="table table-bordered">
+        <tr>
+            <td>DepartmentID</td>
+            <td>Name</td>
+            <td>Budget</td>
+            <td>StartDate</td>
+            <td>InstructorID</td>
+            <td>Instructor</td>
+            <td></td>
+        </tr>
+        <tr *ngFor="let item of departments">
+            <td>{{item.DepartmentID}}</td>
+            <td>{{item.Name}}</td>
+            <td>{{item.Budget}}</td>    
+            <td>{{item.StartDate}}</td>  
+            <td>{{item.InstructorID}}</td>  
+            <td>{{item.Instructor}}</td>         
+            <td>
+                <div class="btn-group" role="group">
+                <a class="btn btn-sm btn-outline-warning" [routerLink]="[ '/department-edit', item.DepartmentID ]">Edit</a>
+                <a class="btn btn-sm btn-outline-danger" [routerLink]="[ '/department-delete', item.DepartmentID ]">Delete</a>
+            </div>
+            </td>
+        </tr>
+    </table>
+
+</div>
